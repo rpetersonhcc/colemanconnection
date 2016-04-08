@@ -1,0 +1,26 @@
+.login-hide-error{display: none;}
+
+.btn-black {
+    background-color: #231f20;
+    border-color: #231f20;
+    color: #FFD141;
+}
+
+.btn-black:hover{
+	color: #fff;
+}
+
+.login-register{
+	text-decoration: underline;	
+}
+.login-register:hover{
+	color: #FFD141;
+}
+
+.btn-yellow{
+	background-color: #FFD141;
+	color:#000;
+}
+.btn-yellow:hover{	
+	color:#fff;
+}
