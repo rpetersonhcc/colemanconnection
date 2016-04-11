@@ -1,0 +1,69 @@
+
+<div class="login-container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="text-center m-b-md">
+                <h3>{{ header }}</h3>
+                <div class="row registerFormValidation">
+                    <h3>Is form valid: {{registerForm.$valid}}</h3>
+                    <h3>First Name is valid: {{ registerForm.firstname.$valid }}</h3>
+                    <h3>First Name is touched: {{ registerForm.firstname.$touched }}</h3>
+                    <h3>Last Name is valid: {{ registerForm.lastname.$valid }}</h3>
+                    <h3>Last Name is touched: {{ registerForm.lastname.$touched }}</h3>
+                    <h3>HCC ID is valid: {{ registerForm.stuID.$valid }}</h3>
+                    <h3>HCC ID is touched: {{ registerForm.stuID.$touched }}</h3>
+                    <h3>Email Name is valid: {{ registerForm.email.$valid }}</h3>
+                    <h3>Email Name is touched: {{ registerForm.email.$touched }}</h3>
+                    <h3>Password is valid: {{ registerForm.password.$valid }}</h3>
+                    <h3>Password is touched: {{ registerForm.password.$touched }}</h3>
+                </div>
+                <p class="message" ng-show="message">{{ message }}</p>
+                
+            </div>
+            <div class="hpanel">
+                <div class="panel-body">
+                        <form id="registerForm" name="registerForm" ng-submit="register()" novalidate>
+                            <div class="form-group">
+                                <label class="control-label" for="firstname">First Name</label>
+                                <input type="text" placeholder="Coleman" title="Please enter your first name" name="firstname" id="firstname" ng-model="student.firstname" ng-required="true" class="form-control">
+                                <span class="help-block small register-error" ng-show="registerForm.firstname.$invalid && registerForm.firstname.$touched">Please enter your first name</span>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label" for="lastname">First Name</label>
+                                <input type="text" placeholder="College" title="Please enter your last name" name="lastname" id="lastname" ng-model="student.lastname" ng-required="true" class="form-control">
+                                <span class="help-block small register-error" ng-show="registerForm.lastname.$invalid && registerForm.lastname.$touched">Please enter your last name</span>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label" for="studentID">HCC Student ID</label>
+                                <input type="text" placeholder="A23456789" title="Please enter your student ID." name="stuID" id="stuID" ng-model="student.stuID" ng-required="true" class="form-control">
+                                <span class="help-block small register-error" ng-show="registerForm.stuID.$invalid && registerForm.stuID.$touched">Please enter your student ID.</span>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label" for="email">Email</label>
+                                <input type="email" placeholder="example@gmail.com" title="Please enter you email" name="email" id="email" ng-model="student.email" ng-required="true" class="form-control">
+                                <span class="help-block small register-error" ng-show="registerForm.email.$invalid && registerForm.email.$touched">You must enter a valid email</span>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label" for="password">Password</label>
+                                <input type="password" title="Please enter your password" placeholder="******" name="password" id="password" ng-model="student.password" ng-required="true" ng-minlength="6" ng-maxlength="20" class="form-control">
+                                <span class="help-block small register-error" ng-show="registerForm.password.$invalid && registerForm.password.$touched">Password must be at least 6 characters</span>
+                            </div>
+                           
+                            <button class="btn btn-black btn-block" ng-disabled="registerForm.$invalid">Register</button>
+                            
+                        </form>
+                        <button class="btn btn-yellow btn-sm m-t-md">Forgot Password ?</button>                        
+                        <div class="tooltip-demo pull-right">            
+                            <button type="button" class="btn btn-yellow pull-right m-t-md" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="If you need any assistance please email studentsfirst@hccs.edu or chat with us online.">Need Help?</button>
+                        </div>
+                        
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 text-center">
+            Do not have a HCC Student ID? <a href="register.html" class="login-register">Register as a Guest.</a>
+        </div>
+    </div>
+</div>

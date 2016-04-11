@@ -1,0 +1,48 @@
+
+<div class="login-container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="text-center m-b-md">
+                <h3>{{ header }}</h3>
+                <div class="row loginFormValidation">
+                    <h3>Is form valid: {{loginForm.$valid}}</h3>
+                    <h3>Email is valid: {{ loginForm.email.$valid }}</h3>
+                    <h3>Email is touched: {{ loginForm.email.$touched }}</h3>
+                    <h3>Password is valid: {{ loginForm.password.$valid }}</h3>
+                    <h3>Password is touched: {{ loginForm.password.$touched }}</h3>
+                </div>
+                <p class="message" ng-show="message">{{ message }}</p>
+                
+            </div>
+            <div class="hpanel">
+                <div class="panel-body">
+                        <form  id="loginForm" name="loginForm" ng-submit="login()" novalidate>
+                            <div class="form-group">
+                                <label class="control-label" for="email">Email</label>
+                                <input type="email" placeholder="example@gmail.com" title="Please enter you email" name="email" id="email" ng-model="user.email" ng-required="true" class="form-control">
+                                <span class="help-block small login-error" ng-show="loginForm.email.$invalid && loginForm.email.$touched">You must enter a valid email</span>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label" for="password">Password</label>
+                                <input type="password" title="Please enter your password" placeholder="******" name="password" id="password" ng-model="user.password" ng-required="true" ng-minlength="6" ng-maxlength="20" class="form-control">
+                                <span class="help-block small login-error" ng-show="loginForm.password.$invalid && loginForm.password.$touched">Password must be at least 6 characters</span>
+                            </div>
+                           
+                            <button class="btn btn-black btn-block" ng-disabled="loginForm.$invalid">Login</button>
+                            
+                        </form>
+                        <button class="btn btn-yellow btn-sm m-t-md">Forgot Password ?</button>                        
+                        <div class="tooltip-demo pull-right">            
+                            <button type="button" class="btn btn-yellow pull-right m-t-md" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="If you need any assistance please email studentsfirst@hccs.edu or chat with us online.">Need Help?</button>
+                        </div>
+                        
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 text-center">
+            Not registered? <a href="register.html" class="login-register">Register Now.</a>
+        </div>
+    </div>
+</div>

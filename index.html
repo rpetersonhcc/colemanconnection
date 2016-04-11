@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html >
 <head>
 
     <meta charset="utf-8">
@@ -12,25 +12,49 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!--<link rel="shortcut icon" type="image/ico" href="favicon.ico" />-->
 
+    <!--Angular script -->
+    <script src="src/angular/angular.min.js"></script>
+    <script src="src/angular-route/angular-route.min.js"></script>
+    <script src="src/app.js"></script>
+    <script src="controllers/login.js"></script>
+    <script src="controllers/register.js"></script>
+    <script src="controllers/success.js"></script>
+   
+
     <!-- Vendor styles -->
     <link rel="stylesheet" href="vendor/fontawesome/css/font-awesome.css" />
     <link rel="stylesheet" href="vendor/metisMenu/dist/metisMenu.css" />
     <link rel="stylesheet" href="vendor/animate.css/animate.css" />
     <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="vendor/sweetalert/lib/sweet-alert.css" />
+    <link rel="stylesheet" href="vendor/toastr/build/toastr.min.css" />
 
     <!-- App styles -->
     <link rel="stylesheet" href="fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css" />
     <link rel="stylesheet" href="fonts/pe-icon-7-stroke/css/helper.css" />
+    <link rel="stylesheet" href="styles/static_custom.css">
     <link rel="stylesheet" href="styles/style.css">
 
     <!-- Custom styles -->
     <link rel="stylesheet" href="styles/custom.css">
 
 </head>
-<body class="blank">
+<body class="blank" ng-app="ColemanConnectionApp">
 
 <!-- Simple splash screen-->
-<div class="splash"> <div class="color-line"></div><div class="splash-title"><h1>COLEMAN CONNECTION is Loading.</p><div class="spinner"> <div class="rect1"></div> <div class="rect2"></div> <div class="rect3"></div> <div class="rect4"></div> <div class="rect5"></div> </div> </div> </div>
+<div class="splash"> 
+    <div class="color-line"></div>
+        <div class="splash-title">
+            <h1>COLEMAN CONNECTION is Loading.</h1>
+            <div class="spinner"> 
+                <div class="rect1"></div> 
+                <div class="rect2"></div> 
+                <div class="rect3"></div> 
+                <div class="rect4"></div> 
+                <div class="rect5"></div> 
+            </div> 
+        </div> 
+</div>
 <!--[if lt IE 7]>
 <p class="alert alert-danger">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
@@ -38,48 +62,21 @@
 
 
 <div class="back-link">
-    <a href="index.html" class="btn btn-black">Back to Dashboard</a>
+<div class="col-md-3 col-sm-3 col-xs-12 text-center">
+<a href="#home" class="btn btn-black">VIEW WELCOME SCREEN</a></div>
+<div class="col-md-6"><h1 class="text-center">WELCOME TO COLEMAN CONNECTION</h1></div>
+    <div class="col-md-3 col-sm-3 col-xs-12">
+    <a href="#login" class="btn btn-black">LOGIN</a>
+    <a href="#register" class="btn btn-black">REGISTER</a>    
+</div>
+<div class="row" ng-view></div>
+      
 </div>
 
-<div class="login-container">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="text-center m-b-md">
-                <h3>COLEMAN CONNECTION LOGIN</h3>
-                
-            </div>
-            <div class="hpanel">
-                <div class="panel-body">
-                        <form action="#" id="loginForm">
-                            <div class="form-group">
-                                <label class="control-label" for="username">Username</label>
-                                <input type="text" placeholder="example@gmail.com" title="Please enter you username" required="" value="" name="username" id="username" class="form-control">
-                                <span class="help-block small login-hide-error">Error Message Here</span>
-                            </div>
-                            <div class="form-group">
-                                <label class="control-label" for="password">Password</label>
-                                <input type="password" title="Please enter your password" placeholder="******" required="" value="" name="password" id="password" class="form-control">
-                                <span class="help-block small login-hide-error">Error Message Here</span>
-                            </div>
-                           
-                            <button class="btn btn-black btn-block">Login</button>
-                            
-                        </form>
-                        <button class="btn btn-yellow btn-sm m-t-md">Forgot Password ?</button>                        
-                        <div class="tooltip-demo pull-right">            
-                            <button type="button" class="btn btn-yellow pull-right m-t-md" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="If you need any assistance please email studentsfirst@hccs.edu or chat with us online.">Need Help?</button>
-                        </div>
-                        
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12 text-center">
-            Not registered? <a href="register.html" class="login-register">Register Now.</a>
-        </div>
-    </div>
-</div>
+
+
+
+
 
 
 <!-- Vendor scripts -->
@@ -88,9 +85,43 @@
 <script src="vendor/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="vendor/metisMenu/dist/metisMenu.min.js"></script>
 
+<script src="vendor/sparkline/index.js"></script>
+<script src="vendor/sweetalert/lib/sweet-alert.min.js"></script>
+<script src="vendor/toastr/build/toastr.min.js"></script>
+
 
 <!-- App scripts -->
 <script src="scripts/homer.js"></script>
+<script>
 
+   $(function () {
+
+       
+
+        $('.demo4').click(function () {
+            swal({
+                        title: "Are you sure?",
+                        text: "Your will not be able to recover this imaginary file!",
+                        type: "warning",
+                        showCancelButton: true,
+                        confirmButtonColor: "#DD6B55",
+                        confirmButtonText: "Yes, delete it!",
+                        cancelButtonText: "No, cancel plx!",
+                        closeOnConfirm: false,
+                        closeOnCancel: false },
+                    function (isConfirm) {
+                        if (isConfirm) {
+                            swal("Deleted!", "Your imaginary file has been deleted.", "success");
+                        } else {
+                            swal("Cancelled", "Your imaginary file is safe :)", "error");
+                        }
+                    });
+        });
+
+        
+
+    });
+
+</script>
 </body>
 </html>

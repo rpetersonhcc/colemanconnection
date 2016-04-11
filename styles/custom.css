@@ -1,4 +1,4 @@
-.login-hide-error{display: none;}
+
 
 .btn-black {
     background-color: #231f20;
@@ -23,4 +23,24 @@
 }
 .btn-yellow:hover{	
 	color:#fff;
+}
+
+/*FORM INPUT VALIDATION*/
+input.ng-invalid.ng-touched{
+	border: 1px solid #ED1A3B!important;
+}
+input.ng-valid.ng-touched{
+	border: 1px solid #72BF44!important;
+}
+.ng-invalid .btn{
+	background: gray;
+	border: gray;
+	color: white;
+}
+.login-error, .register-error{
+	color: #ED1A3B;
+	margin-top: 3px;
+}
+.loginFormValidation, .registerFormValidation{
+	display:none;
 }
