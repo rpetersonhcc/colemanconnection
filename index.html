@@ -16,9 +16,10 @@
     <script src="src/angular/angular.min.js"></script>
     <script src="src/angular-route/angular-route.min.js"></script>
     <script src="src/app.js"></script>
+    <script src="controllers/home.js"></script>
     <script src="controllers/login.js"></script>
     <script src="controllers/register.js"></script>
-    <script src="controllers/success.js"></script>
+    
    
 
     <!-- Vendor styles -->
@@ -40,7 +41,9 @@
 
 </head>
 <body class="blank" ng-app="ColemanConnectionApp">
-
+<div class="" id="header" ng-include="'views/navigation/index.html'">
+    
+</div>
 <!-- Simple splash screen-->
 <div class="splash"> 
     <div class="color-line"></div>
@@ -62,17 +65,11 @@
 
 
 <div class="back-link">
-<div class="col-md-3 col-sm-3 col-xs-12 text-center">
-<a href="#home" class="btn btn-black">VIEW WELCOME SCREEN</a></div>
-<div class="col-md-6"><h1 class="text-center">WELCOME TO COLEMAN CONNECTION</h1></div>
-    <div class="col-md-3 col-sm-3 col-xs-12">
-    <a href="#login" class="btn btn-black">LOGIN</a>
-    <a href="#register" class="btn btn-black">REGISTER</a>    
-</div>
-<div class="row" ng-view></div>
+
+
       
 </div>
-
+<ng-view></ng-view>
 
 
 

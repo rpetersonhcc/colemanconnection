@@ -2,7 +2,10 @@ var myApp = angular.module('ColemanConnectionApp', ['ngRoute']);
 
 myApp.config(['$routeProvider', function($routeProvider){
 	$routeProvider.
-		
+		when('/', {
+			templateUrl: 'views/home/index.html',
+			controller: 'HomeController'
+		}).
 		when('/login', {
 			templateUrl: 'views/login/index.html',
 			controller: 'LoginController'
@@ -18,7 +21,8 @@ myApp.config(['$routeProvider', function($routeProvider){
 			controller: 'SuccessController'
 		}).
 		otherwise({
-			redirectTo: 'views/home/index.html'
+			redirectTo: 'views/home/index.html',
+			controller: 'HomeController'
 		});
 
 		

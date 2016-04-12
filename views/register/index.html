@@ -22,30 +22,30 @@
             </div>
             <div class="hpanel">
                 <div class="panel-body">
-                        <form id="registerForm" name="registerForm" ng-submit="register()" novalidate>
+                        <form id="registerForm" name="registerForm" ng-submit="registerMessage()" novalidate>
                             <div class="form-group">
                                 <label class="control-label" for="firstname">First Name</label>
-                                <input type="text" placeholder="Coleman" title="Please enter your first name" name="firstname" id="firstname" ng-model="student.firstname" ng-required="true" class="form-control">
+                                <input type="text" placeholder="Coleman" title="Please enter your first name" name="firstname" id="firstname" ng-model="register.firstname" ng-required="true" class="form-control">
                                 <span class="help-block small register-error" ng-show="registerForm.firstname.$invalid && registerForm.firstname.$touched">Please enter your first name</span>
                             </div>
                             <div class="form-group">
                                 <label class="control-label" for="lastname">First Name</label>
-                                <input type="text" placeholder="College" title="Please enter your last name" name="lastname" id="lastname" ng-model="student.lastname" ng-required="true" class="form-control">
+                                <input type="text" placeholder="College" title="Please enter your last name" name="lastname" id="lastname" ng-model="register.lastname" ng-required="true" class="form-control">
                                 <span class="help-block small register-error" ng-show="registerForm.lastname.$invalid && registerForm.lastname.$touched">Please enter your last name</span>
                             </div>
                             <div class="form-group">
                                 <label class="control-label" for="studentID">HCC Student ID</label>
-                                <input type="text" placeholder="A23456789" title="Please enter your student ID." name="stuID" id="stuID" ng-model="student.stuID" ng-required="true" class="form-control">
+                                <input type="text" placeholder="A23456789" title="Please enter your student ID." name="stuID" id="stuID" ng-model="register.stuID" ng-required="true" class="form-control">
                                 <span class="help-block small register-error" ng-show="registerForm.stuID.$invalid && registerForm.stuID.$touched">Please enter your student ID.</span>
                             </div>
                             <div class="form-group">
                                 <label class="control-label" for="email">Email</label>
-                                <input type="email" placeholder="example@gmail.com" title="Please enter you email" name="email" id="email" ng-model="student.email" ng-required="true" class="form-control">
+                                <input type="email" placeholder="example@gmail.com" title="Please enter you email" name="email" id="email" ng-model="register.email" ng-required="true" class="form-control">
                                 <span class="help-block small register-error" ng-show="registerForm.email.$invalid && registerForm.email.$touched">You must enter a valid email</span>
                             </div>
                             <div class="form-group">
                                 <label class="control-label" for="password">Password</label>
-                                <input type="password" title="Please enter your password" placeholder="******" name="password" id="password" ng-model="student.password" ng-required="true" ng-minlength="6" ng-maxlength="20" class="form-control">
+                                <input type="password" title="Please enter your password" placeholder="******" name="password" id="password" ng-model="register.password" ng-required="true" ng-minlength="6" ng-maxlength="20" class="form-control">
                                 <span class="help-block small register-error" ng-show="registerForm.password.$invalid && registerForm.password.$touched">Password must be at least 6 characters</span>
                             </div>
                            

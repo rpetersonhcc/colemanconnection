@@ -1,7 +1,9 @@
-myApp.controller('LoginController', ['$scope', function($scope){
+myApp.controller('LoginController', ['$scope', function($scope, $http){
 	$scope.header = "Coleman Connection Login";
 
-	$scope.login = function(){
+	$scope.loginSuccess = function(){
 		$scope.message = "Welcome " + $scope.user.email;
 	}
+	
+	
 }]);
