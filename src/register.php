@@ -47,16 +47,17 @@
 			        // execute the query
 			        $stmt->execute();
 
-			        if($stmt->execute()){
+			        if(!$stmt){
+                                        $array = array('messages' => "", 'error' => "Error registering new student.");
+                                        $json = json_encode($array);
+                                        echo $json;
+
+			        	
+			        }	else {			        	
 			        	$array = array('messages' => "Student registered successfully", 'error' => '');
-			        	$json = json_encode($array);
-			        	echo $json;
-			        	
-			        }	else {
-			        	
-			        	$array = array('messages' => "", 'error' => "Error registering new student.");
-			        	$json = json_encode($array);
-			        	echo $json;
+                                        $json = json_encode($array);
+                                        echo $json; 
+
 			        }	        
         		}	
         			else{

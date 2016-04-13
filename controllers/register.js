@@ -1,8 +1,11 @@
 myApp.controller('RegisterController', ['$scope', '$http', function($scope, $http){
+
+	// Registration Form Heading
 	$scope.header = "Coleman Connection Registration";
 
 	$scope.registerMessage = function(){
 		
+		//place all register form information in data variable
 		var data = $scope.register;
 
 		$http.post('./src/register.php', data)
