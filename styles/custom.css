@@ -1,6 +1,6 @@
 
 
-.btn-black {
+.btn-black, .btn-black a {
     background-color: #231f20;
     border-color: #231f20;
     color: #FFD141;
@@ -44,3 +44,10 @@ input.ng-valid.ng-touched{
 .loginFormValidation, .registerFormValidation{
 	display:none;
 }
+
+/*FORM MODAL*/
+.modal-success-icon{
+	color: #72BF44;
+	font-size: 88px;
+}
+

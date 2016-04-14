@@ -51,7 +51,7 @@
     <div class="color-line">
     </div>
     <div id="logo" class="light-version">
-        <a ng-href="#/">Coleman Connection</a>
+        <a href="index.html">Coleman Connection</a>
     </div>
     <nav role="navigation">
         <div class="header-link hide-menu hidden-xs"><i class="fa fa-bars"></i></div>
@@ -118,10 +118,81 @@
 
 
 
-<div class="back-link">
+<div class="login-container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="text-center m-b-md">
+                <h3>COLEMAN CONNECTION LOGIN</h3>
+                <div class="row loginFormValidation">
+                    <h3>Is form valid: {{loginForm.$valid}}</h3>
+                    <h3>Email is valid: {{ loginForm.email.$valid }}</h3>
+                    <h3>Email is touched: {{ loginForm.email.$touched }}</h3>
+                    <h3>Password is valid: {{ loginForm.password.$valid }}</h3>
+                    <h3>Password is touched: {{ loginForm.password.$touched }}</h3>
+                </div>
+                <p class="message" ng-show="message">{{ message }}</p>
+                
+            </div>
 
+            <!-- LOGIN FORM -->
+            <div class="hpanel">
+                <div class="panel-body">
+                    <form  id="loginForm" name="loginForm" ng-submit="loginMessage()" novalidate>
+                        <div class="form-group">
+                            <label class="control-label" for="email">Email</label>
+                            <input type="email" placeholder="example@gmail.com" title="Please enter you email" name="email" id="email" class="form-control">
+                            <span class="help-block small">You must enter a valid email</span>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" for="password">Password</label>
+                            <input type="password" title="Please enter your password" placeholder="******" name="password" id="password" class="form-control">
+                            <span class="help-block small">Password must be at least 6 characters</span>
+                        </div>
+                       
+                        <button class="btn btn-black btn-block"><a href="user.html">Login</a></button>
+                        
+                    </form>
+                    <button class="btn btn-yellow btn-sm m-t-md" data-toggle="modal" data-target="#resetPasswordModal">Forgot Password ?</button>                        
+                    <div class="tooltip-demo pull-right">            
+                        <button type="button" class="btn btn-yellow pull-right m-t-md" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="If you need any assistance please email studentsfirst@hccs.edu or chat with us online.">Need Help?</button>
+                    </div>                        
+                </div>
+            </div>
+            <!-- END LOGIN FORM -->
 
-      
+            <!-- FORGOT PASSWORD MODAL -->
+            <div class="modal fade" id="resetPasswordModal" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        
+                        <div class="modal-header text-center">
+                            <h4 class="modal-title">RESET PASSWORD</h4>
+                            <small class="font-bold">Enter your email address below and an new password will be sent to you.</small>
+                        </div>
+                        <div class="modal-body">
+                            <form  id="loginForm" name="loginForm" ng-submit="loginMessage()" novalidate>
+                                <div class="form-group">
+                                    <label class="control-label" for="email">Email Address</label>
+                                    <input type="email" placeholder="example@gmail.com" title="Please enter you email" name="email" id="email" class="form-control">
+                                    <span class="help-block small">You must enter a valid email</span>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-black">Send Reset Password</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END FORGOT PASSWORD MODAL -->
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 text-center">
+            Not registered? <a href="register.html" class="login-register">Register Now.</a>
+        </div>
+    </div>
 </div>
 
     <!-- START ANGULAR VIEWS
@@ -138,7 +209,6 @@
 <script src="vendor/slimScroll/jquery.slimscroll.min.js"></script>
 <script src="vendor/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="vendor/metisMenu/dist/metisMenu.min.js"></script>
-
 <script src="vendor/sparkline/index.js"></script>
 <script src="vendor/sweetalert/lib/sweet-alert.min.js"></script>
 <script src="vendor/toastr/build/toastr.min.js"></script>
@@ -146,6 +216,9 @@
 
 <!-- App scripts -->
 <script src="scripts/homer.js"></script>
+
+<!-- Demo Scripts -->
+<script src="src/demo.js"></script>
 
 </body>
 </html>
