@@ -54,3 +54,8 @@ input.ng-valid.ng-touched{
 .not-visible{
 	visibility: hidden;
 }
+
+/*STUDENT and USER PROFILE*/
+.hpanel.hblack .panel-body {
+  border-top: 2px solid #000000;
+}

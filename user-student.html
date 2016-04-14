@@ -91,18 +91,111 @@
                             <tbody>
                             <tr>
                                 <td>
-                                    <a href="profile-user.html">
+                                    <a href="#" data-toggle="modal" data-target="#editProfileStudent">
                                         <i class="pe-7s-news-paper text-info"></i>
-                                        <h5>Profile</h5>
+                                        <h5>Edit Profile</h5>
                                     </a>
+                                    <!-- EDIT PROFILE INFO MODAL -->
+                                    <div class="modal fade" id="editProfileStudent" tabindex="-1" role="dialog" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                
+                                                <div class="modal-header text-center">
+                                                    <h4 class="modal-title">EDIT ACCOUNT</h4>                                                    
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form  id="loginForm" name="loginForm" ng-submit="loginMessage()" novalidate>
+                                                        <div class="form-group">
+                                                            <label class="control-label" for="firstname">First Name</label>
+                                                            <input type="text" placeholder="Coleman" title="Please enter your first name" name="firstname" id="firstname" class="form-control">
+                                                            <span class="help-block small" >Please enter your first name</span>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="control-label" for="lastname">Last Name</label>
+                                                            <input type="text" placeholder="College" title="Please enter your last name" name="lastname" id="lastname" class="form-control">
+                                                            <span class="help-block small" >Please enter your last name</span>
+                                                        </div>                                                        
+                                                        <div class="form-group">
+                                                            <label class="control-label" for="email">Email</label>
+                                                            <input type="email" placeholder="example@gmail.com" title="Please enter you email" name="email" id="email" class="form-control">
+                                                            <span class="help-block small">You must enter a valid email</span>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="control-label" for="password">Password</label>
+                                                            <input type="password" title="Please enter your password" placeholder="******" name="password" id="password" class="form-control">
+                                                            <span class="help-block small">Password must be at least 6 characters</span>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="control-label" for="password">Password Confirmation</label>
+                                                            <input type="password" title="Please enter your password" placeholder="******" name="password" id="password" class="form-control">
+                                                            <span class="help-block small">Password must be at least 6 characters</span>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                                    <button type="button" class="btn btn-black">Update Account</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- END EDIT PROFILE INFO MODAL -->
                                 </td>
                                 <td>
+                                    <a href="#" data-toggle="modal" data-target="#selectProgramsModal">
+                                        <i class="pe-7s-news-paper text-warning"></i>
+                                        <h5>Choose Programs</h5>
+                                    </a>
+                                    <!-- SELECT PROGRAMS MODAL -->
+                                    <div class="modal fade" id="selectProgramsModal" tabindex="-2" role="dialog" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                
+                                                <div class="modal-header text-center">
+                                                    <h4 class="modal-title">CHOOSE PROGRAMS</h4>
+                                                    <small class="font-bold">Select which programs you want to see under Program Sessions</small>                                                    
+                                                </div>
+                                                <div class="modal-body">
+                                                    <!-- CHECKBOX PANEL --> 
+                                                    <form method="get" class="form-horizontal">                                                                
+                                                        <div class="form-group">
+                                                            <div>
+                                                                <div class="checkbox"><label> <input type="checkbox" class="i-checks"> Certified Prevention Specialist </label></div>
+                                                                <div class="checkbox"><label> <input type="checkbox" class="i-checks"> Certified Prevention Specialist </label></div>
+                                                                <div class="checkbox"><label> <input type="checkbox" class="i-checks"> Certified Prevention Specialist </label></div>
+                                                                <div class="checkbox"><label> <input type="checkbox" class="i-checks"> Certified Prevention Specialist </label></div>
+                                                                <div class="checkbox"><label> <input type="checkbox" class="i-checks"> Certified Prevention Specialist </label></div>
+                                                                <div class="checkbox"><label> <input type="checkbox" class="i-checks"> Certified Prevention Specialist </label></div>
+                                                                <div class="checkbox"><label> <input type="checkbox" class="i-checks"> Certified Prevention Specialist </label></div>
+                                                                <div class="checkbox"><label> <input type="checkbox" class="i-checks"> Certified Prevention Specialist </label></div>
+                                                                <div class="checkbox"><label> <input type="checkbox" class="i-checks"> Certified Prevention Specialist </label></div>
+                                                                <div class="checkbox"><label> <input type="checkbox" class="i-checks"> Certified Prevention Specialist </label></div>
+                                                                <div class="checkbox"><label> <input type="checkbox" class="i-checks"> Certified Prevention Specialist </label></div>
+                                                                <div class="checkbox"><label> <input type="checkbox" class="i-checks"> Certified Prevention Specialist </label></div>
+                                                                <div class="checkbox"><label> <input type="checkbox" class="i-checks"> Certified Prevention Specialist </label></div>
+                                                                <div class="checkbox"><label> <input type="checkbox" class="i-checks"> Certified Prevention Specialist </label></div>
+                                                                <div class="checkbox"><label> <input type="checkbox" class="i-checks"> Certified Prevention Specialist </label></div>
+                                                            </div>
+                                                        </div>                                                            
+                                                    </form> 
+                                                    <!-- END CHECKBOX PANEL -->
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                                    <button type="button" class="btn btn-black" data-dismiss="modal">View Selected Programs</a></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- END SELECT PROGRAMS MODAL -->
+                                </td>                                
+                                <td>
                                     <a href="login.html">
-                                        <i class="pe pe-7s-close-circle text-danger"></i>
+                                        <i class="pe pe-7s-power text-danger"></i>
                                         <h5>Sign Out</h5>
                                     </a>
                                 </td>                                
-                            </tr>                            
+                            </tr>                                    
                             </tbody>
                         </table>
                     </div>
@@ -396,6 +489,7 @@
 <script src="vendor/sparkline/index.js"></script>
 <script src="vendor/sweetalert/lib/sweet-alert.min.js"></script>
 <script src="vendor/toastr/build/toastr.min.js"></script>
+<script src="vendor/iCheck/icheck.min.js"></script>
 
 
 <!-- App scripts -->
