@@ -51,3 +51,6 @@ input.ng-valid.ng-touched{
 	font-size: 88px;
 }
 
+.not-visible{
+	visibility: hidden;
+}
