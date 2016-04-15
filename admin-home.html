@@ -70,7 +70,7 @@
             <div class="collapse mobile-navbar" id="mobile-collapse">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a class="" href="profile-admin.html">Profile</a>
+                        <a class="" href="admin-userProfile.html">Profile</a>
                     </li>
                     <li>
                         <a class="" href="login.html">Sign Out</a>
@@ -91,7 +91,7 @@
                             <tbody>
                             <tr>
                                 <td>
-                                    <a href="profile-user.html">
+                                    <a href="admin-userProfile.html">
                                         <i class="pe-7s-news-paper text-info"></i>
                                         <h5>Profile</h5>
                                     </a>
@@ -142,11 +142,13 @@
        
 
         <ul class="nav" id="side-menu">           
-            
+            <li>
+                <a href="admin-home.html"><span class="nav-label">Dashboard</span><span class="fa arrow"></span> </a>                
+            </li>
             <li>
                 <a href="#"><span class="nav-label">Users</span><span class="fa arrow"></span> </a>
                 <ul class="nav nav-second-level">
-                    <li><a href="user-list.html">Manage Users</a></li>
+                    <li><a href="admin-manageUsers.html">Manage Users</a></li>
                     <li><a href="user-create.html">Create New</a></li>                    
                 </ul>
             </li>
@@ -551,7 +553,61 @@
             </div>
         </div>
     </div>
-
+<!---*************************** MODALS ******************************************************-->
+    
+    <!-- ADD NEW USER MODAL -->
+    <div class="modal fade" id="addNewUser" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">                            
+                <div class="modal-header text-center">
+                    <h4 class="modal-title">CREATE NEW USER</h4>                                                    
+                </div>
+                <div class="modal-body">
+                    <form  id="loginForm" name="loginForm" ng-submit="registerUserMessage()" novalidate>
+                        <div class="form-group">
+                            <label class="control-label" for="firstname">First Name</label>
+                            <input type="text" placeholder="Coleman" title="Please enter your first name" name="firstname" id="firstname" class="form-control">
+                            <span class="help-block small" >Please enter your first name</span>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" for="lastname">Last Name</label>
+                            <input type="text" placeholder="College" title="Please enter your last name" name="lastname" id="lastname" class="form-control">
+                            <span class="help-block small" >Please enter your last name</span>
+                        </div>                                                        
+                        <div class="form-group">
+                            <label class="control-label" for="email">Email</label>
+                            <input type="email" placeholder="example@gmail.com" title="Please enter you email" name="email" id="email" class="form-control">
+                            <span class="help-block small">You must enter a valid email</span>
+                        </div> 
+                        <div class="form-group"><label class="col-sm-2 control-label" for="role">Select</label>
+                            <div class="col-sm-10"><select class="form-control m-b" name="role" id="role">
+                                <option>option 1</option>
+                                <option>option 2</option>
+                                <option>option 3</option>
+                                <option>option 4</option>
+                            </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" for="password">Password</label>
+                            <input type="password" title="Please enter your password" placeholder="******" name="password" id="password" class="form-control">
+                            <span class="help-block small">Password must be at least 6 characters</span>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" for="password">Password Confirmation</label>
+                            <input type="password" title="Please enter your password" placeholder="******" name="password" id="password" class="form-control">
+                            <span class="help-block small">Password must be at least 6 characters</span>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-black">Update Account</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END ADD NEW USER MODAL -->  
 
 
     <!-- Footer-->
@@ -590,7 +646,7 @@
 <script src="scripts/homer.js"></script>
 
 <!-- Demo Scripts -->
-<script src="src/demo.js"></script>
+<script src="src/demo/demo.js"></script>
 
 </body>
 </html>

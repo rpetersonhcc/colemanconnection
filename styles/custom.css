@@ -59,3 +59,15 @@ input.ng-valid.ng-touched{
 .hpanel.hblack .panel-body {
   border-top: 2px solid #000000;
 }
+
+/*LINE DASH*/
+.hr-line-dashed-black {
+  background-color: transparent;
+  border-top: 1px dotted #000000;
+  color: transparent;
+  height: 1px;
+  margin: 20px 0;
+}
+.p-l-none{
+	padding-left: 0px;
+}
