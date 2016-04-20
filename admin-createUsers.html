@@ -15,10 +15,8 @@
     <!--Angular script -->
     <script src="src/angular/angular.min.js"></script>
     <script src="src/angular-route/angular-route.min.js"></script>
-    <script src="src/app.js"></script>
-    <script src="controllers/home.js"></script>
-    <script src="controllers/login.js"></script>
-    <script src="controllers/register.js"></script>
+    <script src="src/demo/demo-angular.js"></script>
+    
     
    
 
@@ -40,7 +38,7 @@
     <link rel="stylesheet" href="styles/custom.css">
 
 </head>
-<body class="blank" ng-app="ColemanConnectionApp">
+<body class="blank" >
 
 <!-- Simple splash screen-->
 <div class="splash"> <div class="color-line"></div><div class="splash-title"><h1>COLEMAN CONNECTION is LOADING</p><div class="spinner"> <div class="rect1"></div> <div class="rect2"></div> <div class="rect3"></div> <div class="rect4"></div> <div class="rect5"></div> </div> </div> </div>
@@ -60,9 +58,9 @@
         <a href="index.html">Coleman Connection</a>
     </div>
     <nav role="navigation">
-        <div class="header-link hide-menu hidden-xs"><i class="fa fa-bars"></i></div>
+        <div class="header-link hide-menu"><i class="fa fa-bars"></i></div>
         <div class="small-logo">
-            <span class="text-primary text-center m-l-xl">Coleman Connection</span>
+            <span class="text-primary">Coleman Connection</span>
         </div>
         <form role="search" class="navbar-form-custom" method="post" action="#">
             <div class="form-group">
@@ -76,28 +74,48 @@
             <div class="collapse mobile-navbar" id="mobile-collapse">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a class="" href="login.html">Login</a>
+                        <a class="" href="admin-userProfile.html">Profile</a>
                     </li>
                     <li>
-                        <a class="" href="register.html">Register</a>
+                        <a class="" href="login.html">Sign Out</a>
                     </li>
                 </ul>
             </div>
         </div>
         <div class="navbar-right">
             <ul class="nav navbar-nav no-borders">
-                <li>
+                
+                <li class="dropdown">
+                    <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+                        Coleman Admin &nbsp;<i class="fa fa-user"></i>
+                    </a>
+
+                    <div class="dropdown-menu hdropdown bigmenu animated flipInX">
+                        <table>
+                            <tbody>
+                            <tr>
+                                <td>
+                                    <a href="admin-userProfile.html">
+                                        <i class="pe-7s-news-paper text-info"></i>
+                                        <h5>Profile</h5>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="login.html">
+                                        <i class="pe pe-7s-close-circle text-danger"></i>
+                                        <h5>Sign Out</h5>
+                                    </a>
+                                </td>                                
+                            </tr>                            
+                            </tbody>
+                        </table>
+                    </div>
+                </li>
+                <li class="dropdown not-visible">
                     <a href="login.html">
-                    Login
-                        <i class="fa fa-user"></i>
+                       Logout &nbsp;<i class="fa fa-arrow-right"></i>
                     </a>
-                </li> 
-                <li>
-                    <a href="register.html">
-                    Register
-                        <i class="fa fa-user-plus"></i>
-                    </a>
-                </li>                 
+                </li>
             </ul>
         </div>
     </nav>
@@ -122,28 +140,61 @@
 <p class="alert alert-danger">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
 
+<!-- Navigation -->
+<aside id="menu">
+    <div id="navigation">
+        <ul class="nav" id="side-menu">           
+            <li>
+                <a href="admin-home.html"><span class="nav-label">Dashboard</span><span class="fa arrow"></span> </a>                
+            </li>
+            <li>
+                <a href="#"><span class="nav-label">Users</span><span class="fa arrow"></span> </a>
+                <ul class="nav nav-second-level">
+                    <li><a href="admin-manageUsers.html">Manage Users</a></li>
+                    <li><a href="admin-createUsers.html">Create New</a></li>                    
+                </ul>
+            </li>
+            <li>
+                <a href="#"><span class="nav-label">Students</span><span class="fa arrow"></span> </a>
+                <ul class="nav nav-second-level">
+                    <li><a href="admin-manageStudents.html">View Students</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#"><span class="nav-label">Program Sessions</span><span class="fa arrow"></span> </a>
+                <ul class="nav nav-second-level">
+                    <li><a href="session-list.html">View Session</a></li>
+                    <li><a href="session-manage.html">Manage Sessions</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#"><span class="nav-label">Reports</span><span class="fa arrow"></span> </a>
+                <ul class="nav nav-second-level">
+                    <li><a href="report-happiness.html">Student Happiness</a></li>
+                    <li><a href="report-attendance.html">Attendance</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#"><span class="nav-label">Settings</span><span class="fa arrow"></span> </a>
+                <ul class="nav nav-second-level">
+                    <li><a href="settings-discipline.html">Discipline Teams</a></li>
+                    <li><a href="settings-program.html">Manage Programs</a></li>
+                    <li><a href="settings-pathway.html">Manage Pathways</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</aside>
 
+<!-- Main Wrapper -->
+<div id="wrapper">
 
-<div class="login-container">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="text-center m-b-md">
-                <h3>COLEMAN CONNECTION LOGIN</h3>
-                <div class="row loginFormValidation">
-                    <h3>Is form valid: {{loginForm.$valid}}</h3>
-                    <h3>Email is valid: {{ loginForm.email.$valid }}</h3>
-                    <h3>Email is touched: {{ loginForm.email.$touched }}</h3>
-                    <h3>Password is valid: {{ loginForm.password.$valid }}</h3>
-                    <h3>Password is touched: {{ loginForm.password.$touched }}</h3>
-                </div>
-                <p class="message"</p>
-                
-            </div>
-
+    <div class="login-container">
+        <div class="col-lg-12">
             <!-- REGISTER FORM -->
             <div class="hpanel">
                 <div class="panel-body">
-                    <form id="registerForm" name="registerForm">
+                    <form id="adminRegisterForm" name="adminRegisterForm">
                         <div class="form-group">
                             <label class="control-label" for="firstname">First Name</label>
                             <input type="text" placeholder="Coleman" title="Please enter your first name" name="firstname" id="firstname" class="form-control">
@@ -175,10 +226,10 @@
                             <span class="help-block small">Password must be at least 6 characters</span>
                         </div>
                        
-                        <button class="btn btn-black btn-block" data-toggle="modal" data-target="#registerSuccessModal">Register</button>
+                        <button type="button" class="btn btn-black btn-block" data-toggle="modal" data-target="#adminRegisterSuccessModal">Register</button>
                         
                     </form> 
-                    <button class="btn btn-yellow btn-sm m-t-md" id="regFormReset">Reset Form</button>                                             
+                    <button class="btn btn-yellow btn-sm m-t-md" id="amdinRegFormReset">Reset Form</button>                                             
                     <div class="tooltip-demo pull-right">            
                         <button type="button" class="btn btn-yellow pull-right m-t-md" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="If you need any assistance please email studentsfirst@hccs.edu or chat with us online.">Need Help?</button>
                     </div>                        
@@ -187,23 +238,38 @@
             <!-- END REGISTER FORM -->
 
             <!-- REGISTER SUCCESS MODAL -->
-            <div class="modal fade" id="registerSuccessModal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal fade" id="adminRegisterSuccessModal" tabindex="-1" role="dialog" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">                        
                         <div class="modal-header text-center">
-                            <h4 class="modal-title m-b-xl">CONGRATULATIONS! <br />You have successfully registered.<br /><i class="fa fa-check-circle modal-success-icon m-t-xl" ></i></h4>  
+                            <h4 class="modal-title m-b-xl">CONGRATULATIONS! <br />{username} successfully registered.<br /><i class="fa fa-check-circle modal-success-icon m-t-xl" ></i></h4>  
                             <small class="font-bold ">Your login information will be sent to your email.</small>                    
                         </div>                        
                         <div class="modal-footer">                            
-                            <button type="button" class="btn btn-block btn-black"><a href="login.html">Login Now</a></button>
+                            <button type="button" class="btn btn-block btn-black"><a href="admin-createUsers.html">Create Another User</a></button>
+                            <button type="button" class="btn btn-block btn-black"><a href="admin-manageUsers.html">View Users</a></button>
                         </div>
                     </div>
                 </div>
             </div>
             <!-- REGISTER SUCCESS MODAL -->
         </div>
-    </div>    
+    </div>
+
+
+
+    <!-- Footer-->
+    <footer class="footer">
+        <span class="pull-right">
+            Example text
+        </span>
+        Company 2015-2020
+    </footer>
+
 </div>
+
+
+
 
     <!-- START ANGULAR VIEWS
     <ng-view></ng-view>-->
@@ -218,6 +284,7 @@
 <script src="vendor/jquery/dist/jquery.min.js"></script>
 <script src="vendor/slimScroll/jquery.slimscroll.min.js"></script>
 <script src="vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+
 <script src="vendor/metisMenu/dist/metisMenu.min.js"></script>
 <script src="vendor/sparkline/index.js"></script>
 <script src="vendor/sweetalert/lib/sweet-alert.min.js"></script>
@@ -226,6 +293,7 @@
 
 <!-- App scripts -->
 <script src="scripts/homer.js"></script>
+
 <!-- Demo Scripts -->
 <script src="src/demo/demo.js"></script>
 
