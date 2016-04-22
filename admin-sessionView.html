@@ -26,7 +26,11 @@
     <link rel="stylesheet" href="vendor/animate.css/animate.css" />
     <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="vendor/sweetalert/lib/sweet-alert.css" />
-    <link rel="stylesheet" href="vendor/toastr/build/toastr.min.css" />
+    <link rel="stylesheet" href="vendor/toastr/build/toastr.min.css" />    
+    <link rel="stylesheet" href="vendor/bootstrap-datepicker-master/dist/css/bootstrap-datepicker3.min.css" />
+    <link rel="stylesheet" href="vendor/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" />
+    <link rel="stylesheet" href="vendor/clockpicker/dist/bootstrap-clockpicker.min.css" />
+    <link rel="stylesheet" href="vendor/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
 
     <!-- App styles -->
     <link rel="stylesheet" href="fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css" />
@@ -217,7 +221,7 @@
                              </thead>
                              <tbody>
                              <tr>
-                                 <td>03-18-2016</td>
+                                 <td>03-18-2016<button type="button" data-toggle="modal" data-target="#changeDate" class="btn btn-default m-l-xs">Edit</button></td>
                                  <td>12:00 PM</td>
                                  <td>50</td>
                                  <td>25</td>
@@ -227,7 +231,7 @@
                                  </td>
                              </tr> 
                              <tr>
-                                 <td>03-18-2016</td>
+                                 <td>03-18-2016<button type="button" data-toggle="modal" data-target="#changeDate" class="btn btn-default m-l-xs">Edit</button></td>
                                  <td>12:00 PM</td>
                                  <td>50</td>
                                  <td>25</td>
@@ -237,7 +241,7 @@
                                   </td>
                              </tr>       
                              <tr>
-                                 <td>03-18-2016</td>
+                                 <td>03-18-2016<button type="button" data-toggle="modal" data-target="#changeDate" class="btn btn-default m-l-xs">Edit</button></td>
                                  <td>12:00 PM</td>
                                  <td>50</td>
                                  <td>25</td>
@@ -270,7 +274,7 @@
                              </thead>
                              <tbody>
                              <tr>
-                                 <td>03-18-2016</td>
+                                 <td>03-18-2016<button type="button" data-toggle="modal" data-target="#changeDate" class="btn btn-default m-l-xs">Edit</button></td>
                                  <td>12:00 PM</td>
                                  <td>50</td>
                                  <td>25</td>
@@ -280,7 +284,7 @@
                                   </td>
                              </tr>   
                              <tr>
-                                 <td>03-18-2016</td>
+                                 <td>03-18-2016<button type="button" data-toggle="modal" data-target="#changeDate" class="btn btn-default m-l-xs">Edit</button></td>
                                  <td>12:00 PM</td>
                                  <td>50</td>
                                  <td>25</td>
@@ -290,7 +294,7 @@
                                   </td>
                              </tr>       
                              <tr>
-                                 <td>03-18-2016</td>
+                                 <td>03-18-2016<button type="button" data-toggle="modal" data-target="#changeDate" class="btn btn-default m-l-xs">Edit</button></td>
                                  <td>12:00 PM</td>
                                  <td>50</td>
                                  <td>25</td>
@@ -323,7 +327,7 @@
                              </thead>
                              <tbody>
                              <tr>
-                                 <td>03-18-2016</td>
+                                 <td>03-18-2016<button type="button" data-toggle="modal" data-target="#changeDate" class="btn btn-default m-l-xs">Edit</button></td>
                                  <td>12:00 PM</td>
                                  <td>50</td>
                                  <td>25</td>
@@ -333,7 +337,7 @@
                                   </td>
                              </tr> 
                              <tr>
-                                 <td>03-18-2016</td>
+                                 <td>03-18-2016<button type="button" data-toggle="modal" data-target="#changeDate" class="btn btn-default m-l-xs">Edit</button></td>
                                  <td>12:00 PM</td>
                                  <td>50</td>
                                  <td>25</td>
@@ -343,7 +347,7 @@
                                   </td>
                              </tr>       
                              <tr>
-                                 <td>03-18-2016</td>
+                                 <td>03-18-2016<button type="button" data-toggle="modal" data-target="#changeDate" class="btn btn-default m-l-xs">Edit</button></td>
                                  <td>12:00 PM</td>
                                  <td>50</td>
                                  <td>25</td>
@@ -519,6 +523,36 @@
 </div>
 <!-- SESSION REPORT MODAL -->  
 
+<!-- CHANGE DATE/TIME MODAL -->
+<div class="modal fade" id="changeDate" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">            
+            <div class="modal-header text-center">
+                <h4 class="modal-title">Select New Date/Time</h4>
+                <h4>Program Session: Certified Prevention Specialist</h4>                                                    
+            </div>
+            <div class="modal-body">
+                <!-- CHECKBOX PANEL --> 
+                <div class="form-group">
+                    <div class="input-group date" id="datetimepicker1">
+                            <span class="input-group-addon">
+                                <span class="fa fa-calendar"></span>
+                            </span>
+                        <input type="text" class="form-control"/>
+                    </div>
+                </div>
+                <!-- END CHECKBOX PANEL -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Update</button>
+                
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END CHANGE/DATE TIME MODAL -->
+
     <!-- Footer-->
     <footer class="footer">
         <span class="pull-right">
@@ -545,11 +579,14 @@
 <script src="vendor/jquery/dist/jquery.min.js"></script>
 <script src="vendor/slimScroll/jquery.slimscroll.min.js"></script>
 <script src="vendor/bootstrap/dist/js/bootstrap.min.js"></script>
-
 <script src="vendor/metisMenu/dist/metisMenu.min.js"></script>
 <script src="vendor/sparkline/index.js"></script>
 <script src="vendor/sweetalert/lib/sweet-alert.min.js"></script>
 <script src="vendor/toastr/build/toastr.min.js"></script>
+<script src="vendor/bootstrap-datepicker-master/dist/js/bootstrap-datepicker.min.js"></script>
+<script src="vendor/clockpicker/dist/bootstrap-clockpicker.min.js"></script>
+<script src="vendor/moment/moment.js"></script>
+<script src="vendor/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
 
 
 <!-- App scripts -->
@@ -557,6 +594,21 @@
 
 <!-- Demo Scripts -->
 <script src="src/demo/demo.js"></script>
+
+<script>
+
+    $(function(){
+
+        
+        // ClockPicker
+        $('.clockpicker').clockpicker({autoclose: true});
+
+        // DateTimePicker
+        $('#datetimepicker1').datetimepicker();
+
+    });
+
+</script>
 
 </body>
 </html>
