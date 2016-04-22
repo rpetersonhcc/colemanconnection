@@ -183,23 +183,20 @@
 <div id="wrapper">
 
     <div class="content animate-panel">
-        <div class="col-lg-12">
+        <div class="col-md-6">
             <div class="hpanel">
                 <div class="panel-heading">
-                    <div class="panel-tools">
-                        <a class="showhide"><i class="fa fa-chevron-up"></i></a>
-                        <a class="closebox"><i class="fa fa-times"></i></a>
-                    </div>
-                    <h1>Active Users List</h1>
+                    
+                    <h1>Manage Programs</h1>
                     <div class="hr-line-dashed-black"></div>
                 </div>
 
-                <!-- USERS LIST PANEL -->
+                <!-- PROGRAMS LIST -->
                 <div class="panel-body">
                     <div class="table-responsive" ng-app="userModel" ng-controller="usersCtrl">
                     <div class="m-t-sm m-b-sm p-l-none col-lg-3">
                         <div class="input-group">
-                            <input class="form-control" type="text" placeholder="Search question.." ng-model="searchUsers">
+                            <input class="form-control" type="text" placeholder="Search for program..." ng-model="searchUsers">
                             <div class="input-group-btn">
                                 <button class="btn btn-default"><i class="fa fa-search"></i></button>
                             </div>
@@ -208,22 +205,17 @@
                     <table cellpadding="1" cellspacing="1" class="table table-bordered table-striped">
                         <thead>
                         <tr>
-                            <th>First Name</th>
-                            <th>Last Name</th>
-                            <th>Action</th>
-                            
+                            <th>Program</th>
+                            <th>Action</th>                          
                         </tr>
                         </thead>
                         <tbody>
                         <tr ng-repeat="user in users | filter:searchUsers | orderBy:'lastname'">
                             <td>{{user.firstname}}</td>
-                            <td>{{user.lastname}}</td>
-                            <td class="text-center">
-
-                                <button class="btn btn-default btn-xs"><a href="#" data-toggle="modal" data-target="#editProfileUser">Profile</a></button>
-                                <button class="btn btn-default btn-xs"><a href="#" data-toggle="modal" data-target="#editProgramsUser">Programs</a></button>
-                                <button class="btn btn-default btn-xs"><a href="#" data-toggle="modal" data-target="#deactivateUser">Deactivate</a></button>                            
-                            </td>
+                            <td>
+                                <button><a href="#" data-toggle="modal" data-target="#editProgramGroup">Edit</a></button>
+                                <button><a href="#" data-toggle="modal" data-target="#programActivateChange">Activate/Deactivate</a></button>
+                            </td>                            
                         </tr>                        
                         </tbody>
                     </table>
@@ -234,63 +226,72 @@
 <!---************************************************************** MODALS ******************************************************--> 
 
                 <!-- EDIT USER PROFILE INFO MODAL -->
-                <div class="modal fade" id="editProfileUser" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal fade" id="editProgramGroup" tabindex="-1" role="dialog" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">                            
                             <div class="modal-header text-center">
-                                <h4 class="modal-title">EDIT ACCOUNT</h4>                                                    
+                                <h4 class="modal-title">EDIT PROGRAM</h4>                                                    
                             </div>
                             <div class="modal-body">
                                 <form  id="loginForm" name="loginForm" ng-submit="loginMessage()" novalidate>
                                     <div class="form-group">
-                                        <label class="control-label" for="firstname">First Name</label>
-                                        <input type="text" placeholder="Coleman" title="Please enter your first name" name="firstname" id="firstname" class="form-control">
-                                        <span class="help-block small" >Please enter your first name</span>
+                                        <label class="control-label" for="programName">Program Name</label>
+                                        <input type="text" placeholder="Program Name" name="programName" id="programName" class="form-control">                                        
                                     </div>
-                                    <div class="form-group">
-                                        <label class="control-label" for="lastname">Last Name</label>
-                                        <input type="text" placeholder="College" title="Please enter your last name" name="lastname" id="lastname" class="form-control">
-                                        <span class="help-block small" >Please enter your last name</span>
-                                    </div>                                                        
-                                    <div class="form-group">
-                                        <label class="control-label" for="email">Email</label>
-                                        <input type="email" placeholder="example@gmail.com" title="Please enter you email" name="email" id="email" class="form-control">
-                                        <span class="help-block small">You must enter a valid email</span>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label" for="password">Password</label>
-                                        <input type="password" title="Please enter your password" placeholder="******" name="password" id="password" class="form-control">
-                                        <span class="help-block small">Password must be at least 6 characters</span>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label" for="password">Password Confirmation</label>
-                                        <input type="password" title="Please enter your password" placeholder="******" name="password" id="password" class="form-control">
-                                        <span class="help-block small">Password must be at least 6 characters</span>
+                                    <div class="form-group"><label class="control-label">Program Group</label>
+                                        <div><select class="form-control " name="account">
+                                            <option>Optometry</option>
+                                            <option>Nursing</option>
+                                            <option>HealthCare</option>                                            
+                                        </select>
+                                        </div>
                                     </div>
                                 </form>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                                <button type="button" class="btn btn-black">Update Account</button>
+                                <button type="button" class="btn btn-black">Update Program</button>
                             </div>
                         </div>
                     </div>
                 </div>
                 <!-- END EDIT PROFILE INFO MODAL -->  
 
-                <!-- SELECT PROGRAMS MODAL -->
+               
+
+                <!-- DEACTIVATE PROFILE MODAL -->
+                <div class="modal fade" id="programActivateChange" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">                            
+                            <div class="modal-header text-center">
+                                <h4 class="modal-title">ACTIVATE/DEACTIVATE PROGRAM</h4>                                                    
+                            </div>
+                            <div class="modal-body">
+                                <p>Are you sure you want to change status?</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                <button type="button" class="btn btn-black">Update Status</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- DEACTIVATE PROFILE MODAL --> 
+
+                <!-- SELECT PATHWAYS MODAL -->
                 <div class="modal fade" id="editProgramsUser" tabindex="-2" role="dialog" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             
                             <div class="modal-header text-center">
-                                <h4 class="modal-title">CHOOSE PROGRAMS</h4>
+                                <h4 class="modal-title">CHOOSE PATHWAYS for PROGRAM NAME</h4>
                                 <small class="font-bold">Select which programs you want to see under Program Sessions</small>                                                    
                             </div>
                             <div class="modal-body">
                                 <!-- CHECKBOX PANEL --> 
                                 <form method="get" class="form-horizontal">                                                                
                                     <div class="form-group">
+                                        h3
                                         <div>
                                             <div class="checkbox"><label> <input type="checkbox" class="i-checks"> Certified Prevention Specialist </label></div>
                                             <div class="checkbox"><label> <input type="checkbox" class="i-checks"> Certified Prevention Specialist </label></div>
@@ -319,82 +320,9 @@
                         </div>
                     </div>
                 </div>
-                <!-- END SELECT PROGRAMS MODAL -->
+                <!-- END SELECT PATHWAYS MODAL -->
 
-                <!-- DEACTIVATE PROFILE MODAL -->
-                <div class="modal fade" id="deactivateUser" tabindex="-1" role="dialog" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">                            
-                            <div class="modal-header text-center">
-                                <h4 class="modal-title">DEACTIVATE USER</h4>                                                    
-                            </div>
-                            <div class="modal-body">
-                                <p>Are you sure you want to deactivate?</p>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                                <button type="button" class="btn btn-black">Deactivate User</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- DEACTIVATE PROFILE MODAL --> 
-
-                <!-- ADD NEW USER MODAL -->
-                <div class="modal fade" id="addNewUser" tabindex="-1" role="dialog" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">                            
-                            <div class="modal-header text-center">
-                                <h4 class="modal-title">CREATE NEW USER</h4>                                                    
-                            </div>
-                            <div class="modal-body">
-                                <form  id="loginForm" name="loginForm" ng-submit="registerUserMessage()" novalidate>
-                                    <div class="form-group">
-                                        <label class="control-label" for="firstname">First Name</label>
-                                        <input type="text" placeholder="Coleman" title="Please enter your first name" name="firstname" id="firstname" class="form-control">
-                                        <span class="help-block small" >Please enter your first name</span>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label" for="lastname">Last Name</label>
-                                        <input type="text" placeholder="College" title="Please enter your last name" name="lastname" id="lastname" class="form-control">
-                                        <span class="help-block small" >Please enter your last name</span>
-                                    </div>                                                        
-                                    <div class="form-group">
-                                        <label class="control-label" for="email">Email</label>
-                                        <input type="email" placeholder="example@gmail.com" title="Please enter you email" name="email" id="email" class="form-control">
-                                        <span class="help-block small">You must enter a valid email</span>
-                                    </div> 
-                                    <div class="form-group"><label "control-label" for="role">Select Role</label>
-                                        <select class="form-control m-b" name="role" id="role">
-                                            <option>Admin</option>
-                                            <option>Dean</option>
-                                            <option>Program Director</option>
-                                            <option>Staff</option>
-                                            <option>Secretary</option>
-                                            
-                                        </select>
-                                        
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label" for="password">Password</label>
-                                        <input type="password" title="Please enter your password" placeholder="******" name="password" id="password" class="form-control">
-                                        <span class="help-block small">Password must be at least 6 characters</span>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label" for="password">Password Confirmation</label>
-                                        <input type="password" title="Please enter your password" placeholder="******" name="password" id="password" class="form-control">
-                                        <span class="help-block small">Password must be at least 6 characters</span>
-                                    </div>
-                                </form>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                                <button type="button" class="btn btn-black">Submit</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- END ADD NEW USER MODAL -->   
+               
 
 <!---************************************************************** MODALS ******************************************************-->   
 
