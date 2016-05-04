@@ -15,7 +15,8 @@
     <!--Angular script -->
     <script src="src/angular/angular.min.js"></script>
     <script src="src/angular-route/angular-route.min.js"></script>
-    <script src="src/demo/demo-angular.js"></script>    
+    <script src="src/demo/demo-angular.js"></script> 
+    <script src="controllers/students.js"></script>   
    
 
     <!-- Vendor styles -->
@@ -218,7 +219,7 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr ng-repeat="student in students | filter:searchUsers | orderBy:'lastname' | limitTo: pageSize">
+                            <tr ng-repeat="student in students | filter:searchUsers | limitTo: 20 | orderBy:'lastname' ">
                                 <td>{{student.firstname}}</td>
                                 <td>{{student.lastname}}</td>
                                 <td class="text-center">

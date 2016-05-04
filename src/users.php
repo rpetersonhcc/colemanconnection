@@ -7,8 +7,8 @@
 			
 			// a query get all the records from the users table
 	        $sql = '
-	        SELECT * 
-	        FROM programs';
+	        SELECT firstname, lastname, email 
+	        FROM students limit 50';
 
 	        // use prepared statements, even if not strictly required is good practice
 	        $stmt = $dbh->prepare( $sql );
